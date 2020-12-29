@@ -1,4 +1,5 @@
 class Contact {
+
     constructor(...parms){
         this.first   = parms[0];
         this.last    = parms[1];
@@ -20,18 +21,55 @@ class Contact {
         ", Phone " + this.phone+
         ", email " + this.email;
     }
+    get first ()  { return  this._first; }
+    get last ()   { return  this._last; }
+    get address (){ return  this._address; }
+    get city ()   { return  this._city; }
+    get state ()  { return  this._state; }
+    //get zip ()    { return  this._zip; }
+    //get phone ()  { return  this._phone; }
+    //get email ()  { return  this._email; }
+
+    set first(first){
+        let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
+        if (nameRegex.test(first)) this._first = first;
+        else throw "First is Invalid"    
+    }
+
+    set last(last){
+       let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
+       if (nameRegex.test(last)) this._last = last;
+       else throw "Last is Invalid"    
+     }
+
+    set address(address){
+        let nameRegex = RegExp('^[A-Z a-z]{4,}$');
+        if (nameRegex.test(address)) this._address = address;
+        else throw "Address is Invalid"    
+    }
+
+    set city(city){
+        let nameRegex = RegExp('^[A-Z a-z]{4,}$');
+        if (nameRegex.test(city)) this._city = city;
+        else throw "city  is Invalid"    
+    }
+
+    set state(state){
+        let nameRegex = RegExp('^[A-Z a-z]{4,}$');
+        if (nameRegex.test(state)) this._state = state;
+        else throw "state  is Invalid"    
+    }
 
     
 }
-
-contact1 = new Contact("Chetan","Zambare","Shree Nagar","BSL","MH",425201,9637074619,"zambare.c123@gmail");
-contact2 = new Contact("Ram","Patil","Mohit","Jl","MH",665201,777074619,"ram.c123@gmail");
-
-
-// Add Contact to AddressBookList
+try{
+contact1 = new Contact("Chetan","Zambare","Shree Nagar","BSLdf","MHaha",425201,9637074619,"zambare.c123@gmail");
+contact2 = new Contact("Ram","Patil","Mohit","Jlgsh","MHada",665201,777074619,"ram.c123@gmail");
 let addressBookList = new Array();
 addressBookList.push(contact1);
 addressBookList.push(contact2);
-
 console.log(addressBookList);
-
+}
+catch(e){
+    console.error(e);
+}
