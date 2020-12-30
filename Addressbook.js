@@ -26,9 +26,9 @@ class Contact {
     get address (){ return  this._address; }
     get city ()   { return  this._city; }
     get state ()  { return  this._state; }
-    //get zip ()    { return  this._zip; }
-    //get phone ()  { return  this._phone; }
-    //get email ()  { return  this._email; }
+    get zip ()    { return  this._zip; }
+    get phone ()  { return  this._phone; }
+
 
     set first(first){
         let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
@@ -60,11 +60,24 @@ class Contact {
         else throw "state  is Invalid"    
     }
 
+    set zip(zip){
+        let nameRegex = RegExp('^[0-9]{6}$');
+        if (nameRegex.test(zip)) this._zip = zip;
+        else throw "zip  is Invalid"    
+    }
+
+    set phone(phone){
+        let nameRegex = RegExp('^[0-9]{10}$');
+        if (nameRegex.test(phone)) this._phone = phone;
+        else throw "Phone  is Invalid"    
+    }
+
+
     
 }
 try{
-contact1 = new Contact("Chetan","Zambare","Shree Nagar","BSLdf","MHaha",425201,9637074619,"zambare.c123@gmail");
-contact2 = new Contact("Ram","Patil","Mohit","Jlgsh","MHada",665201,777074619,"ram.c123@gmail");
+contact1 = new Contact("Chetan","Zambare","Shree Nagar","BSLdf","MHaha",425201,9637074619,"zambare.c123@gmail.com");
+contact2 = new Contact("Ram","Patil","Mohit","Jlgsh","MHada",665201,7741833846,"ram.c123@gmail.com");
 let addressBookList = new Array();
 addressBookList.push(contact1);
 addressBookList.push(contact2);
@@ -72,4 +85,9 @@ console.log(addressBookList);
 }
 catch(e){
     console.error(e);
+}
+let givenName = "Chetan"
+function checkNameMatch(Objname){
+    if(Objname == givenName) return true;
+    else return false;
 }
