@@ -168,4 +168,10 @@ function addtoCountMap(obj){
 
 addressBookList.sort(function(a,b){
     return a.first >= b.first ? 1 :  -1 });
+console.log("First Name Soting ");
+console.log( addressBookList);
+
+addressBookList.sort(function(a,b){
+    return a.city >= b.city ? -1 :  1 });
+console.log("City Soting " );
 console.log(addressBookList);
