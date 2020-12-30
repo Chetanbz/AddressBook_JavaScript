@@ -77,7 +77,7 @@ class Contact {
 }
 let addressBookList = new Array();
 try{
-contact1 = new Contact("Chetan","Zambare","Shree Nagar","BSLdf","MHaha",425201,9637074619,"zambare.c123@gmail.com");
+contact1 = new Contact("Chetan","Zambare","Shree Nagar","Bhusawal","Maharastra",425201,9637074619,"zambare.c123@gmail.com");
 contact2 = new Contact("Ram","Patil","Mohit","Jlgsh","MHada",665201,7741833846,"ram.c123@gmail.com");
 }
 catch(e){
@@ -124,3 +124,13 @@ function checkExist(contact){
          return false;
     }
 }
+
+// Search Person 
+let givenCity = "Bhusawal";
+let givenstate = "Maharastra";
+let cityList = addressBookList.filter(obj => obj.city == givenCity)
+                             .map(obj=> obj.first);
+let stateList = addressBookList.filter(obj => obj.state == givenstate)
+                             .map(obj=> obj.first);
+console.log(cityList);
+console.log(stateList);
