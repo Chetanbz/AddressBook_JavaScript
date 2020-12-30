@@ -94,5 +94,8 @@ let givenadd = "Hanuman nagar ram";
 addressBookList.filter(obj => obj._first==givenName).map(obj => obj.address =givenadd);
 console.log(addressBookList);
 
-addressBookList.filter(obj => obj._first==givenName2).forEach(obj =>  addressBookList.splice(addressBookList.indexOf(obj), 1));
-console.log(addressBookList);
+//addressBookList.filter(obj => obj._first==givenName2).forEach(obj =>  addressBookList.splice(addressBookList.indexOf(obj), 1));
+//console.log(addressBookList);
+
+let entryNum = addressBookList.reduce((total) => total+1,0);
+console.log(entryNum);
