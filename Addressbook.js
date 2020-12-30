@@ -136,19 +136,32 @@ console.log(cityList);
 console.log(stateList);
 
 let cityMap = new Map();
+let citycountMap = new Map();
 
 addressBookList.sort(function(a,b){
                 return a.city >= b.city ? -1 :- 1 })
                 .forEach(obj => {
-    cityMap.set(obj.city,obj.first);
+    cityMap.set(obj.first,obj.city);
+    citycountMap.set(obj.city,0);
 })
 console.log(cityMap);
 
 let stateMap = new Map();
+let stateCountMap = new Map();
 
 addressBookList.sort(function(a,b){
                 return a.state >= b.state ? -1 :- 1 })
                 .forEach(obj => {
-    stateMap.set(obj.state,obj.first);
+    stateMap.set(obj.first,obj.state);
+    stateCountMap.set(obj.state,0);
 })
 console.log(stateMap);
+
+
+function addtoCountMap(obj){
+    let entry = cityMap.filter(obj2 => obj2.first == obj.first).length;
+    if(entry != 0){
+        let actual = citycountMap.get
+        citycountMap.set()
+    }
+}
