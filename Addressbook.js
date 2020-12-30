@@ -78,7 +78,7 @@ class Contact {
 let addressBookList = new Array();
 try{
 contact1 = new Contact("Chetan","Zambare","Shree Nagar","Bhusawal","Maharastra",425201,9637074619,"zambare.c123@gmail.com");
-contact2 = new Contact("Ram","Patil","Mohit","Jlgsh","MHada",665201,7741833846,"ram.c123@gmail.com");
+contact2 = new Contact("Ram","Patil","Mohit","avlgsh","MHada",665201,7741833846,"ram.c123@gmail.com");
 }
 catch(e){
     console.error(e);
@@ -134,3 +134,21 @@ let stateList = addressBookList.filter(obj => obj.state == givenstate)
                              .map(obj=> obj.first);
 console.log(cityList);
 console.log(stateList);
+
+let cityMap = new Map();
+
+addressBookList.sort(function(a,b){
+                return a.city >= b.city ? -1 :- 1 })
+                .forEach(obj => {
+    cityMap.set(obj.city,obj.first);
+})
+console.log(cityMap);
+
+let stateMap = new Map();
+
+addressBookList.sort(function(a,b){
+                return a.state >= b.state ? -1 :- 1 })
+                .forEach(obj => {
+    stateMap.set(obj.state,obj.first);
+})
+console.log(stateMap);
