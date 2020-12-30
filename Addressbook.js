@@ -75,19 +75,20 @@ class Contact {
 
     
 }
+let addressBookList = new Array();
 try{
 contact1 = new Contact("Chetan","Zambare","Shree Nagar","BSLdf","MHaha",425201,9637074619,"zambare.c123@gmail.com");
 contact2 = new Contact("Ram","Patil","Mohit","Jlgsh","MHada",665201,7741833846,"ram.c123@gmail.com");
-let addressBookList = new Array();
-addressBookList.push(contact1);
-addressBookList.push(contact2);
-console.log(addressBookList);
 }
 catch(e){
     console.error(e);
 }
-let givenName = "Chetan"
-function checkNameMatch(Objname){
-    if(Objname == givenName) return true;
-    else return false;
-}
+addressBookList.push(contact1);
+addressBookList.push(contact2);
+//console.log(addressBookList);
+
+let givenName = "Chetan";
+let givenadd = "Hanuman nagar ram";
+
+addressBookList.filter(obj => obj._first==givenName).map(obj => obj.address =givenadd);
+console.log(addressBookList);
