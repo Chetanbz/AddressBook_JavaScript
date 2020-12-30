@@ -78,7 +78,7 @@ class Contact {
 let addressBookList = new Array();
 try{
 contact1 = new Contact("Chetan","Zambare","Shree Nagar","Bhusawal","Maharastra",425201,9637074619,"zambare.c123@gmail.com");
-contact2 = new Contact("Ram","Patil","Mohit","avlgsh","MHada",665201,7741833846,"ram.c123@gmail.com");
+contact2 = new Contact("Amam","Patil","Mohit","avlgsh","MHada",665201,7741833846,"ram.c123@gmail.com");
 }
 catch(e){
     console.error(e);
@@ -139,7 +139,7 @@ let cityMap = new Map();
 let citycountMap = new Map();
 
 addressBookList.sort(function(a,b){
-                return a.city >= b.city ? -1 :- 1 })
+                return a.city >= b.city ? -1 : 1 })
                 .forEach(obj => {
     cityMap.set(obj.first,obj.city);
     citycountMap.set(obj.city,0);
@@ -165,3 +165,7 @@ function addtoCountMap(obj){
         citycountMap.set()
     }
 }
+
+addressBookList.sort(function(a,b){
+    return a.first >= b.first ? 1 :  -1 });
+console.log(addressBookList);
