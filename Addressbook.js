@@ -83,19 +83,44 @@ contact2 = new Contact("Ram","Patil","Mohit","Jlgsh","MHada",665201,7741833846,"
 catch(e){
     console.error(e);
 }
+try{
 addressBookList.push(contact1);
 addressBookList.push(contact2);
 //console.log(addressBookList);
+}catch(e){
+    console.error(e);
+}
+
 
 let givenName = "Chetan";
 let givenName2 = "Ram";
 let givenadd = "Hanuman nagar ram";
 
 addressBookList.filter(obj => obj._first==givenName).map(obj => obj.address =givenadd);
-console.log(addressBookList);
+
 
 //addressBookList.filter(obj => obj._first==givenName2).forEach(obj =>  addressBookList.splice(addressBookList.indexOf(obj), 1));
 //console.log(addressBookList);
 
+
 let entryNum = addressBookList.reduce((total) => total+1,0);
 console.log(entryNum);
+
+if(checkExist(contact1)){
+    addressBookList.push(contact1);
+}
+else{
+    console.log("Contact Already Exist");
+}
+
+console.log(addressBookList);
+
+function checkExist(contact){
+    let name = contact.first;
+    let arrlength = addressBookList.filter(obj => obj.first==name).length;
+    if(arrlength == 0) return true;
+    else {
+         "Contact Already Exist";
+         return false;
+    }
+}
